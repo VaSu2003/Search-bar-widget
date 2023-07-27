@@ -6,7 +6,6 @@ async function fetchProducts(){
         const response = await fetch('https://fakestoreapi.com/products')
         const json = await response.json()
         productsObj = json
-        console.log(productsObj)
         
     } catch (error) {
         console.log("there was an error")
@@ -33,6 +32,7 @@ input.addEventListener('input',(e)=>{
         if(matchingProducts.length !== 0){
             matchingProducts.map((ele)=>{
                 const li = document.createElement('li')
+                li.classList.add('listItem')
                 li.textContent = ele.title
                 search_res.appendChild(li)
             })
@@ -41,7 +41,6 @@ input.addEventListener('input',(e)=>{
 
 })
 
-console.log(matchingProducts)
 
 
 
